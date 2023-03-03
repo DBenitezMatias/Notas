@@ -1,12 +1,27 @@
+
 package notas;
 
 import java.util.Scanner;
 
 public class Notas {
+	
 	/*@author David Benitez Matias
 	 * @version 1.0
 	 * @since 03/03/2023
-	 * /
+	 * */
+	
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);// Para pedir un dato numérico por teclado
+		int nota = 0;
+		System.out.print("Introduzca el valor de una calificación: ");
+		nota = reader.nextInt();
+		String calificacion = Califica.califica(nota);
+		System.out.println(calificacion);
+		reader.close();
+	}
+}
+
+class Califica {
 	
 	/**
 	 * Este método devuelve la calificación correspondiente a una nota numérica.
@@ -27,14 +42,5 @@ public class Notas {
 			calificacion = "El valor de la calificación introducida no es correcta";
 		return calificacion;
 	}
-	
-	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);// Para pedir un dato numérico por teclado
-		int nota = 0;
-		System.out.print("Introduzca el valor de una calificación: ");
-		nota = reader.nextInt();
-		String calificacion = califica(nota);
-		System.out.println(calificacion);
-		reader.close();
-	}
 }
+
